@@ -8,7 +8,7 @@ module.exports = {
             {
                 token: 'xxx',
                 endpoint: 'https://reportportal.apiture.com/api/v1',
-                launch: 'REPORTPORTAL_TEST_LAUNCH',
+                launch: 'TINY_REPO_LAUNCH_TESTING',
                 project: 'default_personal',
                 description: 'Testing RP with NX and Jest',
                 debug: true,

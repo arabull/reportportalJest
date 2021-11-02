@@ -10,7 +10,7 @@
         "does-not-report": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "jest.config.js",
+            "jestConfig": "./apps/tester/jest.config.js",
             "passWithNoTests": false,
             "silent": false,
             "color": false,
@@ -21,7 +21,7 @@
         "reports": {
           "executor": "@nrwl/workspace:run-commands",
           "options": {
-            "command": "jest --detectOpenHandles --config jest.config.js --testTimeout 3600000"
+            "command": "jest --detectOpenHandles --config ./apps/tester/jest.config.js --testTimeout 3600000"
           }
         }
       }

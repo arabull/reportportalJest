@@ -15,13 +15,14 @@
             "silent": false,
             "color": false,
             "detectOpenHandles": true,
-            "testTimeout": 3600000
+            "testTimeout": 3600000,
+            "runInBand": true
           }
         },
         "reports": {
           "executor": "@nrwl/workspace:run-commands",
           "options": {
-            "command": "jest --detectOpenHandles --config ./apps/tester/jest.config.js --testTimeout 3600000"
+            "command": "jest --detectOpenHandles --config ./apps/tester/jest.config.js --testTimeout 3600000 --runInBand"
           }
         }
       }

@@ -7,24 +7,25 @@
       "projectType": "library",
       "schematics": {},
       "architect": {
-        "smoke-test": {
+        "does-not-report": {
           "builder": "@nrwl/jest:jest",
           "options": {
             "jestConfig": "jest.config.js",
             "passWithNoTests": false,
             "silent": false,
             "color": false,
-            "detectOpenHandles": true
+            "detectOpenHandles": true,
+            "testTimeout": 3600000
           }
         },
-        "smoke-test-2":{
+        "reports": {
           "executor": "@nrwl/workspace:run-commands",
-            "options": {
-                "command": "jest --detectOpenHandles --config jest.config.js"
-            }
+          "options": {
+            "command": "jest --detectOpenHandles --config jest.config.js --testTimeout 3600000"
+          }
         }
       }
-  }
+    }
   },
   "cli": {
     "defaultCollection": "@nrwl/workspace"

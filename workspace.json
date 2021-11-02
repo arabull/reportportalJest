@@ -1,6 +1,31 @@
 {
   "version": 2,
-  "projects": {},
+  "projects": {
+    "testing": {
+      "root": "apps/tester",
+      "sourceRoot": "apps/tester",
+      "projectType": "library",
+      "schematics": {},
+      "architect": {
+        "smoke-test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "jest.config.js",
+            "passWithNoTests": false,
+            "silent": false,
+            "color": false,
+            "detectOpenHandles": true
+          }
+        },
+        "smoke-test-2":{
+          "executor": "@nrwl/workspace:run-commands",
+            "options": {
+                "command": "jest --detectOpenHandles --config jest.config.js"
+            }
+        }
+      }
+  }
+  },
   "cli": {
     "defaultCollection": "@nrwl/workspace"
   }

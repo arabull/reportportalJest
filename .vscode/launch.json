@@ -1,0 +1,33 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      /* This allows you to debug a group of tests by service. Just replace 
+      "cards" with the service you want to debug and "regression-test" with the test type
+      Debugging is handled by going to the debug menu, then selecting this in the dropdown,
+       then hitting play*/
+      "name": "JestDebugService",
+      "type": "node",
+      "request": "launch",
+      "program": "${workspaceFolder}/node_modules/@nrwl/cli/bin/nx",
+      "args": ["smoke-test", "testing", "--verbose"],
+      "cwd": "${workspaceFolder}",
+      "console": "integratedTerminal",
+      "internalConsoleOptions": "neverOpen",
+      "trace": true
+    },
+    {
+      "name": "Debug Node App",
+      "type": "node",
+      "request": "attach",
+      "port": 7777
+    }
+  ],
+  "inputs": [
+    {
+      "id": "module",
+      "type": "promptString",
+      "description": "module for while the task will run"
+    }
+  ]
+}

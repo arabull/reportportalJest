@@ -2,15 +2,25 @@
   "name": "example-jest",
   "version": "0.0.0",
   "license": "MIT",
-  "scripts": {},
+  "scripts": {
+    "test": "jest --no-colors --detectOpenHandles --config ./jest.config.js",
+    "test2": "nx run testing:smoke-test --verbose"
+  },
   "private": true,
-  "dependencies": {},
+  "dependencies": {
+    "@reportportal/agent-js-jest": "^5.0.0",
+    "@reportportal/client-javascript": "^5.0.0",
+    "jest": "26.6.3",
+    "jest-cli": "26.6.3"
+  },
   "devDependencies": {
     "@nrwl/tao": "12.10.0",
     "@nrwl/cli": "12.10.0",
     "@nrwl/workspace": "12.10.0",
     "@types/node": "14.14.33",
     "typescript": "~4.3.5",
-    "prettier": "^2.3.1"
+    "prettier": "^2.3.1",
+    "jest-circus": "26.6.3",
+    "@nrwl/jest": "11.4.0"
   }
 }

@@ -28,7 +28,10 @@ class RestClient {
   }
 
   static request(method, url, data, options = {}) {
-    return Promise.resolve({ id: 'mock' });
+    // this is the problem
+    return new Promise((resolve) =>
+      setTimeout(() => resolve({ id: 'mock' }), Math.random() * 500)
+    );
   }
 
   getRestConfig() {

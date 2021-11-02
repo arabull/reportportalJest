@@ -28,7 +28,15 @@ class RestClient {
   }
 
   static request(method, url, data, options = {}) {
-    // this is the problem
+    //
+    // This triggers the problem. If we return a resolved promise here, it
+    // works, but that obviously isn't a real solution since the code needs
+    // to make live calls to the portal.
+    //
+    // Untested and unproven theory: Since calls work when made directly
+    // from Jest, perhaps these promises are making it back to the caller
+    // and Jest handles them properly whereas Nx does not.
+    //
     return new Promise((resolve) =>
       setTimeout(() => resolve({ id: 'mock' }), Math.random() * 500)
     );

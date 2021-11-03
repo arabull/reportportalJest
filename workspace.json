@@ -22,7 +22,7 @@
         "reports": {
           "executor": "@nrwl/workspace:run-commands",
           "options": {
-            "command": "jest --detectOpenHandles --config ./apps/tester/jest.config.js --testTimeout 3600000 --runInBand"
+            "command": "jest --silent=false --detectOpenHandles --config ./apps/tester/jest.config.js --testTimeout 3600000 --runInBand"
           }
         }
       }
